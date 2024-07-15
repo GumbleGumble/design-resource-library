@@ -10,8 +10,8 @@ import { Toaster } from '@/components/ui/sonner'
 
 export const metadata = {
   metadataBase: process.env.VERCEL_URL
-    ? new URL(`https://${process.env.VERCEL_URL}`)
-    : undefined,
+      ? new URL(`https://${process.env.VERCEL_URL}`)
+      : undefined,
   title: {
     default: 'Next.js AI Chatbot',
     template: `%s - Next.js AI Chatbot`
@@ -37,20 +37,21 @@ interface RootLayoutProps {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en" suppressHydrationWarning>
+      <html lang="en" suppressHydrationWarning>
       <body
-        className={cn(
-          'font-sans antialiased',
-          GeistSans.variable,
-          GeistMono.variable
-        )}
+          className={cn(
+              'font-sans antialiased',
+              GeistSans.variable,
+              GeistMono.variable
+          )}
       >
-        <Toaster position="top-center" />
+      <Toaster position="top-center" />
+      <>
         <Providers
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
         >
           <div className="flex flex-col min-h-screen">
             <Header />
@@ -58,7 +59,8 @@ export default function RootLayout({ children }: RootLayoutProps) {
           </div>
           <TailwindIndicator />
         </Providers>
+      </>
       </body>
-    </html>
+      </html>
   )
 }
